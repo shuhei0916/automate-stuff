@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "df9ea1883bc0841cf334e33da5f093b0ecf05acb7fe92f9fb9243de2b5d5965c"
+            "sha256": "479d0cb4b91c208c72ce673d091aec74e40dedcbf6b897f09f343602f7d0342c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -121,6 +121,7 @@
             "hashes": [
                 "sha256:105254a8b04934f0bc84e9c24eb360a591aaf6535c9def5f29d92af107a9bf57"
             ],
+            "index": "pypi",
             "version": "==1.8.2"
         },
         "pyrect": {
