@@ -36,11 +36,22 @@ for quiz_num in range(3):
     # TODO: 47都道府県をループして、それぞれ問題を作成する
     for question_num in range(len(prefectures)):
         correct_answer = capitals[prefectures[question_num]]
+        print(correct_answer)
         wrong_answers = list(capitals.values())
-        del wrong_answers[wrong_answers.index(correct_answer)]
-        
+        del wrong_answers[wrong_answers.index(correct_answer)] # 正解を削除
+        wrong_answers = random.sample(wrong_answers, 3)
+        answer_options = wrong_answers + [correct_answer]
+        random.shuffle(answer_options)
 
+        # 問題文と回答選択肢を問題ファイルに書く
+        quiz_file.write('{}. {}の都道府県庁所在地は？\n'.format(question_num + 1, prefectures[question_num]))
+        for i in range(4):
+            # 'ABCD'[i]は'ABCD'という文字列を配列とみなしている。順番に'A'から'D'の値となる。
+            quiz_file.write(' {}. {}\n'.format('ABCD'[i], answer_options[i]))
 
+        quiz_file.write('\n')
+
+        answer_key_file.write('{}. {}\n'.format(question_num + 1, 'ABCD'[answer_options.index(correct_answer)]))
 
     quiz_file.close()
     answer_key_file.close()
