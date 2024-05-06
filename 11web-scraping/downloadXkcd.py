@@ -24,8 +24,15 @@ while not url.endswith('#'):
         res = requests.get(comic_url)
         res.raise_for_status()
 
-    # save images
-    image_file = open(os.path.join('xkcd', os.path.basename(comic_url)), 'wb')
-    ### ここから! ###
+        # save images
+        image_file = open(os.path.join('xkcd', os.path.basename(comic_url)), 'wb')
+        for chunk in res.iter_content(10000):
+            image_file.write(chunk)
+        image_file.close()
+        
+    # get prev button's URL
+    prev_link = soup.select('a[rel="prev"]')[0]
+    url = 'http://xkcd.com' + prev_link.get('href')
+    
 print('finished')
 
