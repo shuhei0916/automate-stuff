@@ -10,6 +10,7 @@ requests = "*"
 beautifulsoup4 = "*"
 selenium = "*"
 chromedriver-binary = "==124.0.6367.91.0"
+openpyxl = "*"
 
 [dev-packages]
 
