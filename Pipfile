@@ -13,6 +13,7 @@ chromedriver-binary = "==124.0.6367.91.0"
 openpyxl = "*"
 pypdf2 = "*"
 python-docx = "*"
+pillow = "*"
 
 [dev-packages]
 
