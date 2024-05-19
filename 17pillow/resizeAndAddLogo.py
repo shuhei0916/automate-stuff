@@ -20,8 +20,6 @@ for filename in os.listdir('.'):
         continue
     
     im = Image.open(filename)
-    
-    
         
     
 
